@@ -145,6 +145,7 @@
             bntIniciar.Name = "bntIniciar";
             bntIniciar.Size = new Size(91, 68);
             bntIniciar.TabIndex = 4;
+            bntIniciar.Tag = "btnControle";
             bntIniciar.Text = "Novo Jogo";
             bntIniciar.UseVisualStyleBackColor = false;
             bntIniciar.Click += bntIniciar_Click;
@@ -433,6 +434,7 @@
             buttonAcentos.Name = "buttonAcentos";
             buttonAcentos.Size = new Size(87, 68);
             buttonAcentos.TabIndex = 25;
+            buttonAcentos.Tag = "btnControle";
             buttonAcentos.Text = "ÁÉ";
             buttonAcentos.UseVisualStyleBackColor = true;
             buttonAcentos.Click += buttonAcentos_Click;
@@ -547,6 +549,7 @@
             buttonFecharEspeciais.Name = "buttonFecharEspeciais";
             buttonFecharEspeciais.Size = new Size(105, 67);
             buttonFecharEspeciais.TabIndex = 6;
+            buttonFecharEspeciais.Tag = "btnControle";
             buttonFecharEspeciais.Text = "Fechar";
             buttonFecharEspeciais.UseVisualStyleBackColor = false;
             buttonFecharEspeciais.Click += buttonFecharEspeciais_Click;

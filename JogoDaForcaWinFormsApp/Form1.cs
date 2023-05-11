@@ -17,50 +17,18 @@ namespace JogoDaForcaWinFormsApp
 
             IniciarJogo();
 
-            buttonA.Click += ReceberPapite!;
-            buttonB.Click += ReceberPapite!;
-            buttonC.Click += ReceberPapite!;
-            buttonD.Click += ReceberPapite!;
-            buttonE.Click += ReceberPapite!;
-            buttonF.Click += ReceberPapite!;
-            buttonG.Click += ReceberPapite!;
-            buttonH.Click += ReceberPapite!;
-            buttonI.Click += ReceberPapite!;
-            buttonJ.Click += ReceberPapite!;
-            buttonK.Click += ReceberPapite!;
-            buttonL.Click += ReceberPapite!;
-            buttonM.Click += ReceberPapite!;
-            buttonN.Click += ReceberPapite!;
-            buttonO.Click += ReceberPapite!;
-            buttonP.Click += ReceberPapite!;
-            buttonQ.Click += ReceberPapite!;
-            buttonR.Click += ReceberPapite!;
-            buttonS.Click += ReceberPapite!;
-            buttonT.Click += ReceberPapite!;
-            buttonU.Click += ReceberPapite!;
-            buttonV.Click += ReceberPapite!;
-            buttonX.Click += ReceberPapite!;
-            buttonZ.Click += ReceberPapite!;
-            buttonW.Click += ReceberPapite!;
-            buttonY.Click += ReceberPapite!;
-            buttonAComAcento.Click += ReceberPapite!;
-            buttonAComTil.Click += ReceberPapite!;
-            buttonEComAcento.Click += ReceberPapite!;
-            buttonOComAcento.Click += ReceberPapite!;
-            buttonOComTil.Click += ReceberPapite!;
-            buttonCCedilha.Click += ReceberPapite!;
-            buttonIComAcento.Click += ReceberPapite!;
-            buttonUComAcento.Click += ReceberPapite!;
-
+            AguardarJogada();
         }
 
+       
         private Image AlterarImagem()
         {
             return imagens[numeroImagem++];
         }
 
-        private void ReceberPapite(object sender, EventArgs e)
+        private void ReceberPalpite(object sender, EventArgs e)
         {
+
             Button btn = (Button)sender;
 
             bool acertou = jogo.LancarPalpite(Convert.ToChar(btn.Text));
@@ -147,6 +115,30 @@ namespace JogoDaForcaWinFormsApp
         {
             caracteresEspeciais.Visible = false;
             caracteres.Visible = true;
+        }
+
+        private void AguardarJogada()
+        {
+            foreach (var item in caracteres.Controls)
+            {
+                if(item is Button btn && btn.Tag == null)
+                {
+                    btn.Click += ReceberPalpite!;
+                  
+                }
+                   
+            }
+
+            foreach (var especiais in caracteresEspeciais.Controls)
+            {
+                if (especiais is Button btnEspeciais && btnEspeciais.Tag == null)
+                {
+                    btnEspeciais.Click += ReceberPalpite!;
+                  
+                }
+
+            }
+
         }
     }
 }
