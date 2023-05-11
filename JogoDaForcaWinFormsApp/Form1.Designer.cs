@@ -579,6 +579,7 @@
             letrasJogadas.Location = new Point(34, 512);
             letrasJogadas.Margin = new Padding(20, 3, 20, 3);
             letrasJogadas.Name = "letrasJogadas";
+            letrasJogadas.ReadOnly = true;
             letrasJogadas.Size = new Size(172, 39);
             letrasJogadas.TabIndex = 9;
             // 
@@ -597,6 +598,7 @@
             palavraOculta.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
             palavraOculta.Location = new Point(427, 491);
             palavraOculta.Name = "palavraOculta";
+            palavraOculta.ReadOnly = true;
             palavraOculta.Size = new Size(466, 56);
             palavraOculta.TabIndex = 11;
             // 
