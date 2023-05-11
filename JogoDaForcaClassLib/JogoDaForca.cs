@@ -49,7 +49,7 @@
 
         public string MostrarMensagem(bool venceu)
         {
-            return $"{(venceu ? "Parabéns voçe acertou a palavra" : "Deu forca... A palavra era")} {this.PalavraSorteada}";
+            return $"{(venceu ? "Parabéns você acertou a palavra" : "Deu forca... A palavra era")} {this.PalavraSorteada}";
         }
 
         private List<string> ListarPalavras()

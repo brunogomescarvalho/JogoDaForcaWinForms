@@ -83,9 +83,13 @@ namespace JogoDaForcaWinFormsApp
             else if (ehFimDeJogo)
             {
                 MessageBox.Show(jogo.MostrarMensagem(false));
+
             }
 
             MostrarLetrasJogadas();
+
+            if (palavraCompleta || ehFimDeJogo)
+                IniciarJogo();
 
         }
 
@@ -103,7 +107,7 @@ namespace JogoDaForcaWinFormsApp
         private void CarregarPalavraOculta()
         {
             palavraOculta.Text = "";
-            jogo.PalavraOculta.ForEach(i => palavraOculta.Text += i + " ");
+            jogo.PalavraOculta.ForEach(i => palavraOculta.Text += i + "  ");
         }
 
         private void IniciarJogo()
@@ -112,7 +116,7 @@ namespace JogoDaForcaWinFormsApp
 
             imagemDaForca.Image = imagens[0];
 
-            letrasJogadas.Text = "Letras Já Jogadas";
+            letrasJogadas.Text = "";
 
             jogo = new JogoDaForca();
 

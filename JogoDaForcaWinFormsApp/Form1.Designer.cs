@@ -58,9 +58,6 @@
             buttonY = new Button();
             buttonAcentos = new Button();
             imagemDaForca = new PictureBox();
-            fontDialog1 = new FontDialog();
-            palavraOculta = new Label();
-            letrasJogadas = new Label();
             caracteresEspeciais = new TableLayoutPanel();
             buttonAComAcento = new Button();
             buttonEComAcento = new Button();
@@ -71,6 +68,9 @@
             buttonFecharEspeciais = new Button();
             buttonAComTil = new Button();
             buttonOComTil = new Button();
+            letrasJogadas = new TextBox();
+            label1 = new Label();
+            palavraOculta = new TextBox();
             caracteres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imagemDaForca).BeginInit();
             caracteresEspeciais.SuspendLayout();
@@ -78,7 +78,6 @@
             // 
             // caracteres
             // 
-            caracteres.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             caracteres.ColumnCount = 5;
             caracteres.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             caracteres.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
@@ -113,7 +112,7 @@
             caracteres.Controls.Add(buttonX, 3, 4);
             caracteres.Controls.Add(buttonY, 4, 4);
             caracteres.Controls.Add(buttonAcentos, 1, 5);
-            caracteres.Location = new Point(407, 67);
+            caracteres.Location = new Point(427, 23);
             caracteres.Name = "caracteres";
             caracteres.RowCount = 6;
             caracteres.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
@@ -122,15 +121,16 @@
             caracteres.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             caracteres.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             caracteres.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            caracteres.Size = new Size(458, 340);
+            caracteres.Size = new Size(469, 424);
             caracteres.TabIndex = 3;
             // 
             // buttonZ
             // 
+            buttonZ.Dock = DockStyle.Fill;
             buttonZ.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonZ.Location = new Point(3, 283);
+            buttonZ.Location = new Point(3, 353);
             buttonZ.Name = "buttonZ";
-            buttonZ.Size = new Size(85, 54);
+            buttonZ.Size = new Size(87, 68);
             buttonZ.TabIndex = 7;
             buttonZ.Text = "Z";
             buttonZ.UseVisualStyleBackColor = true;
@@ -141,11 +141,11 @@
             bntIniciar.Dock = DockStyle.Fill;
             bntIniciar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             bntIniciar.ForeColor = SystemColors.ButtonHighlight;
-            bntIniciar.Location = new Point(367, 283);
+            bntIniciar.Location = new Point(375, 353);
             bntIniciar.Name = "bntIniciar";
-            bntIniciar.Size = new Size(88, 54);
+            bntIniciar.Size = new Size(91, 68);
             bntIniciar.TabIndex = 4;
-            bntIniciar.Text = "Iniciar";
+            bntIniciar.Text = "Novo Jogo";
             bntIniciar.UseVisualStyleBackColor = false;
             bntIniciar.Click += bntIniciar_Click;
             // 
@@ -155,7 +155,7 @@
             buttonA.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
             buttonA.Location = new Point(3, 3);
             buttonA.Name = "buttonA";
-            buttonA.Size = new Size(85, 50);
+            buttonA.Size = new Size(87, 64);
             buttonA.TabIndex = 0;
             buttonA.Text = "A";
             buttonA.UseVisualStyleBackColor = true;
@@ -164,9 +164,9 @@
             // 
             buttonB.Dock = DockStyle.Fill;
             buttonB.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonB.Location = new Point(94, 3);
+            buttonB.Location = new Point(96, 3);
             buttonB.Name = "buttonB";
-            buttonB.Size = new Size(85, 50);
+            buttonB.Size = new Size(87, 64);
             buttonB.TabIndex = 1;
             buttonB.Text = "B";
             buttonB.UseVisualStyleBackColor = true;
@@ -175,9 +175,9 @@
             // 
             buttonC.Dock = DockStyle.Fill;
             buttonC.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonC.Location = new Point(185, 3);
+            buttonC.Location = new Point(189, 3);
             buttonC.Name = "buttonC";
-            buttonC.Size = new Size(85, 50);
+            buttonC.Size = new Size(87, 64);
             buttonC.TabIndex = 2;
             buttonC.Text = "C";
             buttonC.UseVisualStyleBackColor = true;
@@ -186,9 +186,9 @@
             // 
             buttonD.Dock = DockStyle.Fill;
             buttonD.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonD.Location = new Point(276, 3);
+            buttonD.Location = new Point(282, 3);
             buttonD.Name = "buttonD";
-            buttonD.Size = new Size(85, 50);
+            buttonD.Size = new Size(87, 64);
             buttonD.TabIndex = 3;
             buttonD.Text = "D";
             buttonD.UseVisualStyleBackColor = true;
@@ -197,9 +197,9 @@
             // 
             buttonE.Dock = DockStyle.Fill;
             buttonE.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonE.Location = new Point(367, 3);
+            buttonE.Location = new Point(375, 3);
             buttonE.Name = "buttonE";
-            buttonE.Size = new Size(88, 50);
+            buttonE.Size = new Size(91, 64);
             buttonE.TabIndex = 4;
             buttonE.Text = "E";
             buttonE.UseVisualStyleBackColor = true;
@@ -208,9 +208,9 @@
             // 
             buttonF.Dock = DockStyle.Fill;
             buttonF.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonF.Location = new Point(3, 59);
+            buttonF.Location = new Point(3, 73);
             buttonF.Name = "buttonF";
-            buttonF.Size = new Size(85, 50);
+            buttonF.Size = new Size(87, 64);
             buttonF.TabIndex = 5;
             buttonF.Text = "F";
             buttonF.UseVisualStyleBackColor = true;
@@ -219,9 +219,9 @@
             // 
             buttonG.Dock = DockStyle.Fill;
             buttonG.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonG.Location = new Point(94, 59);
+            buttonG.Location = new Point(96, 73);
             buttonG.Name = "buttonG";
-            buttonG.Size = new Size(85, 50);
+            buttonG.Size = new Size(87, 64);
             buttonG.TabIndex = 6;
             buttonG.Text = "G";
             buttonG.UseVisualStyleBackColor = true;
@@ -230,9 +230,9 @@
             // 
             buttonH.Dock = DockStyle.Fill;
             buttonH.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonH.Location = new Point(185, 59);
+            buttonH.Location = new Point(189, 73);
             buttonH.Name = "buttonH";
-            buttonH.Size = new Size(85, 50);
+            buttonH.Size = new Size(87, 64);
             buttonH.TabIndex = 7;
             buttonH.Text = "H";
             buttonH.UseVisualStyleBackColor = true;
@@ -241,9 +241,9 @@
             // 
             buttonI.Dock = DockStyle.Fill;
             buttonI.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonI.Location = new Point(276, 59);
+            buttonI.Location = new Point(282, 73);
             buttonI.Name = "buttonI";
-            buttonI.Size = new Size(85, 50);
+            buttonI.Size = new Size(87, 64);
             buttonI.TabIndex = 8;
             buttonI.Text = "I";
             buttonI.UseVisualStyleBackColor = true;
@@ -252,9 +252,9 @@
             // 
             buttonJ.Dock = DockStyle.Fill;
             buttonJ.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonJ.Location = new Point(367, 59);
+            buttonJ.Location = new Point(375, 73);
             buttonJ.Name = "buttonJ";
-            buttonJ.Size = new Size(88, 50);
+            buttonJ.Size = new Size(91, 64);
             buttonJ.TabIndex = 9;
             buttonJ.Text = "J";
             buttonJ.UseVisualStyleBackColor = true;
@@ -263,9 +263,9 @@
             // 
             buttonK.Dock = DockStyle.Fill;
             buttonK.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonK.Location = new Point(3, 115);
+            buttonK.Location = new Point(3, 143);
             buttonK.Name = "buttonK";
-            buttonK.Size = new Size(85, 50);
+            buttonK.Size = new Size(87, 64);
             buttonK.TabIndex = 10;
             buttonK.Text = "K";
             buttonK.UseVisualStyleBackColor = true;
@@ -274,9 +274,9 @@
             // 
             buttonL.Dock = DockStyle.Fill;
             buttonL.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonL.Location = new Point(94, 115);
+            buttonL.Location = new Point(96, 143);
             buttonL.Name = "buttonL";
-            buttonL.Size = new Size(85, 50);
+            buttonL.Size = new Size(87, 64);
             buttonL.TabIndex = 11;
             buttonL.Text = "L";
             buttonL.UseVisualStyleBackColor = true;
@@ -285,9 +285,9 @@
             // 
             buttonM.Dock = DockStyle.Fill;
             buttonM.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonM.Location = new Point(185, 115);
+            buttonM.Location = new Point(189, 143);
             buttonM.Name = "buttonM";
-            buttonM.Size = new Size(85, 50);
+            buttonM.Size = new Size(87, 64);
             buttonM.TabIndex = 12;
             buttonM.Text = "M";
             buttonM.UseVisualStyleBackColor = true;
@@ -296,9 +296,9 @@
             // 
             buttonN.Dock = DockStyle.Fill;
             buttonN.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonN.Location = new Point(276, 115);
+            buttonN.Location = new Point(282, 143);
             buttonN.Name = "buttonN";
-            buttonN.Size = new Size(85, 50);
+            buttonN.Size = new Size(87, 64);
             buttonN.TabIndex = 13;
             buttonN.Text = "N";
             buttonN.UseVisualStyleBackColor = true;
@@ -307,9 +307,9 @@
             // 
             buttonO.Dock = DockStyle.Fill;
             buttonO.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonO.Location = new Point(367, 115);
+            buttonO.Location = new Point(375, 143);
             buttonO.Name = "buttonO";
-            buttonO.Size = new Size(88, 50);
+            buttonO.Size = new Size(91, 64);
             buttonO.TabIndex = 14;
             buttonO.Text = "O";
             buttonO.UseVisualStyleBackColor = true;
@@ -318,9 +318,9 @@
             // 
             buttonP.Dock = DockStyle.Fill;
             buttonP.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonP.Location = new Point(3, 171);
+            buttonP.Location = new Point(3, 213);
             buttonP.Name = "buttonP";
-            buttonP.Size = new Size(85, 50);
+            buttonP.Size = new Size(87, 64);
             buttonP.TabIndex = 15;
             buttonP.Text = "P";
             buttonP.UseVisualStyleBackColor = true;
@@ -329,9 +329,9 @@
             // 
             buttonQ.Dock = DockStyle.Fill;
             buttonQ.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonQ.Location = new Point(94, 171);
+            buttonQ.Location = new Point(96, 213);
             buttonQ.Name = "buttonQ";
-            buttonQ.Size = new Size(85, 50);
+            buttonQ.Size = new Size(87, 64);
             buttonQ.TabIndex = 16;
             buttonQ.Text = "Q";
             buttonQ.UseVisualStyleBackColor = true;
@@ -340,9 +340,9 @@
             // 
             buttonR.Dock = DockStyle.Fill;
             buttonR.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonR.Location = new Point(185, 171);
+            buttonR.Location = new Point(189, 213);
             buttonR.Name = "buttonR";
-            buttonR.Size = new Size(85, 50);
+            buttonR.Size = new Size(87, 64);
             buttonR.TabIndex = 17;
             buttonR.Text = "R";
             buttonR.UseVisualStyleBackColor = true;
@@ -351,9 +351,9 @@
             // 
             buttonS.Dock = DockStyle.Fill;
             buttonS.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonS.Location = new Point(276, 171);
+            buttonS.Location = new Point(282, 213);
             buttonS.Name = "buttonS";
-            buttonS.Size = new Size(85, 50);
+            buttonS.Size = new Size(87, 64);
             buttonS.TabIndex = 18;
             buttonS.Text = "S";
             buttonS.UseVisualStyleBackColor = true;
@@ -362,9 +362,9 @@
             // 
             buttonT.Dock = DockStyle.Fill;
             buttonT.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonT.Location = new Point(367, 171);
+            buttonT.Location = new Point(375, 213);
             buttonT.Name = "buttonT";
-            buttonT.Size = new Size(88, 50);
+            buttonT.Size = new Size(91, 64);
             buttonT.TabIndex = 19;
             buttonT.Text = "T";
             buttonT.UseVisualStyleBackColor = true;
@@ -374,9 +374,9 @@
             buttonU.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             buttonU.Dock = DockStyle.Fill;
             buttonU.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonU.Location = new Point(3, 227);
+            buttonU.Location = new Point(3, 283);
             buttonU.Name = "buttonU";
-            buttonU.Size = new Size(85, 50);
+            buttonU.Size = new Size(87, 64);
             buttonU.TabIndex = 20;
             buttonU.Text = "U";
             buttonU.UseVisualStyleBackColor = true;
@@ -385,9 +385,9 @@
             // 
             buttonV.Dock = DockStyle.Fill;
             buttonV.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonV.Location = new Point(94, 227);
+            buttonV.Location = new Point(96, 283);
             buttonV.Name = "buttonV";
-            buttonV.Size = new Size(85, 50);
+            buttonV.Size = new Size(87, 64);
             buttonV.TabIndex = 21;
             buttonV.Text = "V";
             buttonV.UseVisualStyleBackColor = true;
@@ -396,9 +396,9 @@
             // 
             buttonW.Dock = DockStyle.Fill;
             buttonW.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonW.Location = new Point(185, 227);
+            buttonW.Location = new Point(189, 283);
             buttonW.Name = "buttonW";
-            buttonW.Size = new Size(85, 50);
+            buttonW.Size = new Size(87, 64);
             buttonW.TabIndex = 22;
             buttonW.Text = "W";
             buttonW.UseVisualStyleBackColor = true;
@@ -407,9 +407,9 @@
             // 
             buttonX.Dock = DockStyle.Fill;
             buttonX.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonX.Location = new Point(276, 227);
+            buttonX.Location = new Point(282, 283);
             buttonX.Name = "buttonX";
-            buttonX.Size = new Size(85, 50);
+            buttonX.Size = new Size(87, 64);
             buttonX.TabIndex = 23;
             buttonX.Text = "X";
             buttonX.UseVisualStyleBackColor = true;
@@ -418,19 +418,20 @@
             // 
             buttonY.Dock = DockStyle.Fill;
             buttonY.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonY.Location = new Point(367, 227);
+            buttonY.Location = new Point(375, 283);
             buttonY.Name = "buttonY";
-            buttonY.Size = new Size(88, 50);
+            buttonY.Size = new Size(91, 64);
             buttonY.TabIndex = 24;
             buttonY.Text = "Y";
             buttonY.UseVisualStyleBackColor = true;
             // 
             // buttonAcentos
             // 
+            buttonAcentos.Dock = DockStyle.Fill;
             buttonAcentos.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonAcentos.Location = new Point(94, 283);
+            buttonAcentos.Location = new Point(96, 353);
             buttonAcentos.Name = "buttonAcentos";
-            buttonAcentos.Size = new Size(85, 54);
+            buttonAcentos.Size = new Size(87, 68);
             buttonAcentos.TabIndex = 25;
             buttonAcentos.Text = "ÁÉ";
             buttonAcentos.UseVisualStyleBackColor = true;
@@ -439,32 +440,11 @@
             // imagemDaForca
             // 
             imagemDaForca.Image = Properties.Resources.img1;
-            imagemDaForca.Location = new Point(48, 67);
+            imagemDaForca.Location = new Point(34, 26);
             imagemDaForca.Name = "imagemDaForca";
-            imagemDaForca.Size = new Size(318, 427);
+            imagemDaForca.Size = new Size(360, 427);
             imagemDaForca.TabIndex = 2;
             imagemDaForca.TabStop = false;
-            // 
-            // palavraOculta
-            // 
-            palavraOculta.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            palavraOculta.AutoSize = true;
-            palavraOculta.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            palavraOculta.Location = new Point(435, 436);
-            palavraOculta.Name = "palavraOculta";
-            palavraOculta.Size = new Size(353, 58);
-            palavraOculta.TabIndex = 6;
-            palavraOculta.Text = "Jogo Da Forca";
-            // 
-            // letrasJogadas
-            // 
-            letrasJogadas.AutoSize = true;
-            letrasJogadas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            letrasJogadas.Location = new Point(60, 549);
-            letrasJogadas.Name = "letrasJogadas";
-            letrasJogadas.Size = new Size(139, 28);
-            letrasJogadas.TabIndex = 7;
-            letrasJogadas.Text = "Letras Jogadas";
             // 
             // caracteresEspeciais
             // 
@@ -481,7 +461,7 @@
             caracteresEspeciais.Controls.Add(buttonFecharEspeciais, 0, 2);
             caracteresEspeciais.Controls.Add(buttonAComTil, 1, 2);
             caracteresEspeciais.Controls.Add(buttonOComTil, 2, 2);
-            caracteresEspeciais.Location = new Point(384, 129);
+            caracteresEspeciais.Location = new Point(443, 87);
             caracteresEspeciais.Name = "caracteresEspeciais";
             caracteresEspeciais.RowCount = 3;
             caracteresEspeciais.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
@@ -507,6 +487,7 @@
             buttonEComAcento.Dock = DockStyle.Fill;
             buttonEComAcento.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEComAcento.Location = new Point(114, 3);
+            buttonEComAcento.MinimumSize = new Size(109, 65);
             buttonEComAcento.Name = "buttonEComAcento";
             buttonEComAcento.Size = new Size(109, 65);
             buttonEComAcento.TabIndex = 1;
@@ -559,6 +540,7 @@
             // 
             // buttonFecharEspeciais
             // 
+            buttonFecharEspeciais.BackColor = SystemColors.ActiveCaption;
             buttonFecharEspeciais.Dock = DockStyle.Fill;
             buttonFecharEspeciais.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             buttonFecharEspeciais.Location = new Point(3, 145);
@@ -566,7 +548,7 @@
             buttonFecharEspeciais.Size = new Size(105, 67);
             buttonFecharEspeciais.TabIndex = 6;
             buttonFecharEspeciais.Text = "Fechar";
-            buttonFecharEspeciais.UseVisualStyleBackColor = true;
+            buttonFecharEspeciais.UseVisualStyleBackColor = false;
             buttonFecharEspeciais.Click += buttonFecharEspeciais_Click;
             // 
             // buttonAComTil
@@ -591,20 +573,50 @@
             buttonOComTil.Text = "Õ";
             buttonOComTil.UseVisualStyleBackColor = true;
             // 
+            // letrasJogadas
+            // 
+            letrasJogadas.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            letrasJogadas.Location = new Point(34, 512);
+            letrasJogadas.Margin = new Padding(20, 3, 20, 3);
+            letrasJogadas.Name = "letrasJogadas";
+            letrasJogadas.Size = new Size(172, 39);
+            letrasJogadas.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(38, 481);
+            label1.Name = "label1";
+            label1.Size = new Size(161, 28);
+            label1.TabIndex = 10;
+            label1.Text = "Letras Já Jogadas";
+            // 
+            // palavraOculta
+            // 
+            palavraOculta.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
+            palavraOculta.Location = new Point(427, 491);
+            palavraOculta.Name = "palavraOculta";
+            palavraOculta.Size = new Size(466, 56);
+            palavraOculta.TabIndex = 11;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientInactiveCaption;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(949, 699);
-            Controls.Add(caracteresEspeciais);
-            Controls.Add(letrasJogadas);
             Controls.Add(palavraOculta);
+            Controls.Add(label1);
+            Controls.Add(letrasJogadas);
+            Controls.Add(caracteresEspeciais);
             Controls.Add(caracteres);
             Controls.Add(imagemDaForca);
             MinimumSize = new Size(967, 746);
             Name = "Form1";
-            Text = "Form1";
+            Padding = new Padding(50, 20, 50, 50);
+            ShowIcon = false;
+            Text = "Jogo Da Forca";
             caracteres.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)imagemDaForca).EndInit();
             caracteresEspeciais.ResumeLayout(false);
@@ -641,10 +653,7 @@
         private Button buttonY;
         private PictureBox imagemDaForca;
         private Button bntIniciar;
-        private FontDialog fontDialog1;
-        private Label palavraOculta;
         private Button buttonZ;
-        private Label letrasJogadas;
         private Button buttonAcentos;
         private TableLayoutPanel caracteresEspeciais;
         private Button buttonAComAcento;
@@ -656,5 +665,8 @@
         private Button buttonFecharEspeciais;
         private Button buttonAComTil;
         private Button buttonOComTil;
+        private TextBox letrasJogadas;
+        private Label label1;
+        private TextBox palavraOculta;
     }
 }
